@@ -617,3 +617,99 @@
 
 /******************************************************************** */
 // 集合(set)类型
+// let actions = new Set();
+// actions.add('read');
+// actions.add('write').add('update');
+// actions.add('delete');
+// actions.add('read').add('read').add('delete').add('write').add('update');
+// console.log(actions);  // Set { 'read', 'write', 'update', 'delete' }
+// console.log(actions.entries());  // [Set Iterator] { 'read', 'write', 'update', 'delete' }
+// console.log(actions.keys);  // [Function: values]
+// console.log(actions.values());  // [Set Iterator] { 'read', 'write', 'update', 'delete' }
+// console.log('');
+
+// for(let element of actions) {
+//     console.log(element);
+// }
+// console.log('');
+
+// console.log(actions.size);  // 4
+
+// console.log(actions.has('hide'));  // false
+// console.log(actions.has('write'));  // true
+
+
+/*************************************************************************************** */
+// 地图类型（Map）
+// let items = new Map();
+// items.set('slipper', 50);
+// items.set('shoes', 200);
+// items.set('pants', 100).set('shirt', 150);
+
+// console.log(items);
+// Map {
+//     'slipper' => 50,
+//     'shoes' => 200,
+//     'pants' => 100,
+//     'shirt' => 150 }
+// console.log(items.size);  // 4
+// console.log(items.entries());
+// [Map Iterator] {
+//     [ 'slipper', 50 ],
+//     [ 'shoes', 200 ],
+//     [ 'pants', 100 ],
+//     [ 'shirt', 150 ] }
+// console.log(items.keys());  // [Map Iterator] { 'slipper', 'shoes', 'pants', 'shirt' }
+// console.log(items.values());  // [Map Iterator] { 50, 200, 100, 150 }
+
+// for(let [product, price] of items) {
+//     console.log(`One ${product} consts ${price}.`)
+// }
+// One slipper consts 50.
+// One shoes consts 200.
+// One pants consts 100.
+// One shirt consts 150.
+
+
+/************************************************************************************* */
+// 数据类型的转换
+// let digital_string = '  123  ';
+// result = Number(digital_string);
+// console.log(result);  // 123
+
+// digital_string = '   0o123';
+// result = Number(digital_string);
+// console.log(result);  // 83
+
+// digital_string = '0x123';
+// result = Number(digital_string);
+// console.log(result);  // 291
+
+// result = parseInt(digital_string);
+// console.log(result);  // 291
+
+// result = Math.round(digital_string);
+// console.log(result);  // 291
+// console.log('');
+
+// digital_string = '35.62';
+// result = Math.floor(digital_string);
+// console.log(result);  // 35
+
+// digital_string = '28.2';
+// result = Math.ceil(digital_string);
+// console.log(result);  // 29
+
+// digital_string = '12.5';
+// result = Math.round(digital_string);
+// console.log(result);  // 13
+
+// let value = 53.8125;
+// result = value.toString(2);
+// console.log(result);  // 110101.1101
+
+// result = value.toString(8);
+// console.log(result);  // 65.64
+
+// result = value.toString(16);
+// console.log(result);  // 35.d
