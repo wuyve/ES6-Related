@@ -258,66 +258,283 @@
 
 /************************************************************************* */
 // 扩展运算符
-var greetings = ['hi', 'howdy', 'hey man', 'g\'day mate'];
-var extended_greetings = ['Long time no see', 'Nice to see you', 'hiya', ...greetings];
-console.log(extended_greetings);
-console.log('');
+// var greetings = ['hi', 'howdy', 'hey man', 'g\'day mate'];
+// var extended_greetings = ['Long time no see', 'Nice to see you', 'hiya', ...greetings];
+// console.log(extended_greetings);
+// console.log('');
 
-var number_texts = ['one', 'two', 'three'];
-var number_digits = '123';
-var numbers = [...number_texts, ...number_digits];
-console.log(numbers);  // ['one', 'two', 'three', 1, 2, 3]
-console.log('');
+// var number_texts = ['one', 'two', 'three'];
+// var number_digits = '123';
+// var numbers = [...number_texts, ...number_digits];
+// console.log(numbers);  // ['one', 'two', 'three', 1, 2, 3]
+// console.log('');
 
-let birthday = new Date(1999, 11, 25, 20, 20);
-let now = new Date();
-console.log(birthday.toLocaleString());  // 1999-12-25 8:20:00 PM
-console.log(now.toLocaleString());  // 2019-10-7 9:50:40 AM
-console.log('');
+// let birthday = new Date(1999, 11, 25, 20, 20);
+// let now = new Date();
+// console.log(birthday.toLocaleString());  // 1999-12-25 8:20:00 PM
+// console.log(now.toLocaleString());  // 2019-10-7 9:50:40 AM
+// console.log('');
 
-let arr01 = [1, 2, 3];
-let arr02 = [10, 20, 30];
-let arr03 = [...arr01, ...arr02, 100, 200, 300];
+// let arr01 = [1, 2, 3];
+// let arr02 = [10, 20, 30];
+// let arr03 = [...arr01, ...arr02, 100, 200, 300];
 
-let obj01 = {name: 'obj01', amout: 10};
-let obj02 = {name: 'obj02', amout: 5, origin: 'thai'};
-let obj03 = {...obj01, ...obj02};  // 对象中使用扩展符为合并对象
+// let obj01 = {name: 'obj01', amout: 10};
+// let obj02 = {name: 'obj02', amout: 5, origin: 'thai'};
+// let obj03 = {...obj01, ...obj02};  // 对象中使用扩展符为合并对象
 
-console.log(arr03);  // [ 1, 2, 3, 10, 20, 30, 100, 200, 300 ]
-console.log(obj03);  // { name: 'obj02', amout: 5, origin: 'thai' }
+// console.log(arr03);  // [ 1, 2, 3, 10, 20, 30, 100, 200, 300 ]
+// console.log(obj03);  // { name: 'obj02', amout: 5, origin: 'thai' }
 
 
 /**************************************************************************************** */
 // 删除运算符
+// let person = {name: 'person', gender: 'female', age: 12};
+// let colors = ['red', 'yellow', 'green', 'blue'];
+// var num01 = 123;
+// let num02 = 456;
+// num03 = 789;
 
+// console.log(num01, num02, num03);  // 123 456 789
+// console.log('');
+
+// delete person.name;
+// delete colors[1];
+
+// delete num01;
+// delete num02;
+// delete num03;
+
+// console.log(person.name);  // undefined
+// console.log(person);  // { gender: 'female', age: 12 }
+// console.log('');
+
+// console.log(colors[1]);  // undefined
+// console.log(colors);  // [ 'red', <1 empty item>, 'green', 'blue' ]
+// console.log('');
+
+// console.log(num01);  // 123
+// console.log(num02);  // 456
+// console.log(num03);  // 报错 num03 is not defined
 
 
 /*************************************************************************************************** */
 // 数值类型
+// var number01 = 111;
+// var number02 = parseInt('111', 16);
+// var number03 = 0x111;
+// var number04 = 0111;  // 不能用于严格模型
+// var number05 = parseInt('111', 8);
+// var number06 = 0o111;  // es6
+// var number07 = parseInt('111', 2);
+// var number08 = 0b111;  // es6
 
+// console.log(number01);  // 111
+// console.log(number02);  // 273
+// console.log(number03);  // 273
+// console.log(number04);  // 73
+// console.log(number05);  // 73
+// console.log(number06);  // 73
+// console.log(number07);  // 7
+// console.log(number08);  // 7
 
 
 /****************************************************************************************** */
 // 数值的正负号
+// Math.sign(特定变量名称)
+// 返回值为0，代表特定变量的数值为0；
+// 返回值为-0，代表特定变量的数值为-0；
+// 返回值为1，代表特定变量的数值为正数；
+// 返回值为-1，代表特定变量的数值为负数；
+// 返回值为NaN，代表特定变量的数据无法被转换为数值。
 
+// console.log(Math.sign(0));  // 0
+// console.log(Math.sign(-0));  // -0
+
+// console.log(Math.sign(123));  // 1
+// console.log(Math.sign(-123));  // -1
+
+// console.log(Math.sign(null));  // 0
+  
+// console.log(Math.sign(NaN));  // NaN
+// console.log(Math.sign('hello'));  // NaN
+// console.log(Math.sign(undefined));  // NaN
 
 
 /****************************************************************************************** */
 // 数值的截断
+// Math.parseInt();  // 返回整数部分
+// Math.trunc();  // 返回整数部分
+// Math.floor();  // 向下取整
+// Math.round();  // 四舍五入
+// Math.ceil();  // 向上取整
 
+// v01 = 12.5;
+// v02 = 12.3;
+// v03 = 0.56;
+// v04 = -0.83;
+
+// console.log(parseInt(v01));  // 12
+// console.log(Math.trunc(v01));  // 12
+// console.log(Math.floor(v01));  // 12
+// console.log(Math.round(v01));  // 13
+// console.log(Math.ceil(v01));  // 13
+// console.log('')
+
+// console.log(parseInt(v02));  // 12
+// console.log(Math.trunc(v02));  // 12
+// console.log(Math.floor(v02));  // 12
+// console.log(Math.round(v02));  // 12
+// console.log(Math.ceil(v02));  // 13
+// console.log('')
+
+// console.log(parseInt(v03));  // 0
+// console.log(Math.trunc(v03));  // 0
+// console.log(Math.floor(v03));  // 0
+// console.log(Math.round(v03));  // 1
+// console.log(Math.ceil(v03));  // 1
+// console.log('')
+
+// console.log(parseInt(v04));  // -0
+// console.log(Math.trunc(v04));  // -0
+// console.log(Math.floor(v04));  // -1
+// console.log(Math.round(v04));  // -1
+// console.log(Math.ceil(v04));  // -0
+// console.log('')
 
 
 /********************************************************************************* */
 // 数值的特殊格式
+// var nf_en = Intl.NumberFormat('en');
+// var nf_de = Intl.NumberFormat('de');
+// var number01 = 2533591.8;
 
+// console.log(nf_en.format(number01));  // 2,533,591.8
+// console.log(nf_de.format(number01));  // 2,533,591.8
+// console.log('');
+
+// console.log(number01.toString());  // 2533591.8
+// console.log(number01.toLocaleString());  // 2,533,591.8
+// console.log('');
+
+// console.log(number01.toLocaleString('en'));  // 2,533,591.8
+// console.log(number01.toLocaleString('de'));  // 2,533,591.8
+// console.log('');
+
+// var cnf_cn = Intl.NumberFormat('cn', {style: 'currency', currency: 'cny'});
+// var cnf_jp = Intl.NumberFormat('jp', {style: 'currency', currency: 'jpy'});
+// var cnf_en = Intl.NumberFormat('en', {style: 'currency', currency: 'usd'});
+// var cnf_uk = Intl.NumberFormat('uk', {style: 'currency', currency: 'gbp'});
+// var cnf_de = Intl.NumberFormat('de', {style: 'currency', currency: 'eur'});
+// var price01 = 25324700.56;
+
+// console.log(cnf_cn.format(price01));  // CN¥ 25,324,700.56
+// console.log(cnf_jp.format(price01));  // JP¥ 25,324,701
+// console.log(cnf_en.format(price01));  // $25,324,700.56
+// console.log(cnf_uk.format(price01));  // £ 25,324,700.56
+// console.log(cnf_de.format(price01));  // € 25,324,700.56
 
 
 /************************************************************************************************** */
 // 整数值的安全范围
+// console.log(Number.isNaN(NaN));  // true
+// console.log(Number.isNaN(123));  // false
 
+// console.log(Number.isFinite(456));  // true
+// console.log(Number.isFinite(NaN));  // false
+
+// console.log(Number.isFinite(Infinity));  // false
+// console.log(Number.isFinite(-Infinity));  // false
+
+// console.log('');
+
+// console.log(Number.isSafeInteger(Math.pow(2, 48) + 100));  // true
+// console.log(Number.isSafeInteger(Math.pow(2, 53) - 1));  // true
+// console.log(Number.isSafeInteger(Math.pow(2, 53)));  // false
 
 
 /******************************************************************************************* */
 // 布尔类型
+// let passed = false, score = 0;
+
+// score = 80;
+// passed = score > 60;
+// console.log(passed);  // true
+
+// score = 55;
+// passed = score > 60;
+// console.log(passed);  // false
+// console.log('');
+
+// let conversion;
+
+// conversion = Boolean(-10.8);
+// console.log(conversion);  // true
+
+// conversion = Boolean(15.6);
+// console.log(conversion);  // true
+// console.log('');
+
+// conversion = Boolean(0);
+// console.log(conversion);  // false
+
+// conversion = Boolean(null);
+// console.log(conversion);  // false
+
+// conversion = Boolean(false);
+// console.log(conversion);  // false
+
+// conversion = Boolean('');
+// console.log(conversion);  // false
+
+// conversion = Boolean(undefined);
+// console.log(conversion);  // false
+// console.log('');
+
+// conversion = new Boolean(-10.8);
+// console.log(conversion.valueOf());  // true
+
+// conversion = new Boolean(15.6);
+// console.log(conversion.valueOf());  // true
+
+// conversion = new Boolean(0);
+// console.log(conversion.valueOf());  // false
 
 
+/********************************************************************* */
+// 数组类型
+let numbers = [520, 530, 1314, 2013, 2014];
+let profile = ['Tommy', 'male', 33, [180, 72]];
+let newone = new Array(6);
+
+console.log(numbers);  // [ 520, 530, 1314, 2013, 2014 ]
+console.log(numbers[2]);  // 1314
+
+numbers[1] = 2591.8;
+
+console.log(numbers);  // [ 520, 2591.8, 1314, 2013, 2014 ]
+console.log(numbers.length);  // 5
+console.log('');
+
+console.log(profile);  // [ 'Tommy', 'male', 33, [ 180, 72 ] ]
+console.log(profile[0]);  // Tommy
+console.log(profile[2]);  // 33
+console.log(profile[3][0]);  // 180
+console.log(profile[3][1]);  // 72
+
+profile[3][1] = 70;
+
+console.log(profile);  // [ 'Tommy', 'male', 33, [ 180, 70 ] ]
+console.log(profile.length);  // 4
+console.log(profile[3].length);  // 2
+
+console.log(numbers[numbers.length]);  // undefined
+console.log(profile[profile.length]);  // undefined
+console.log('');
+
+console.log(newone[0]);  // undefined
+console.log(newone[newone.length]);  // undefined
+
+
+/******************************************************************* */
+// 对象类型
