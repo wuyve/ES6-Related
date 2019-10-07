@@ -503,38 +503,117 @@
 
 /********************************************************************* */
 // 数组类型
-let numbers = [520, 530, 1314, 2013, 2014];
-let profile = ['Tommy', 'male', 33, [180, 72]];
-let newone = new Array(6);
+// let numbers = [520, 530, 1314, 2013, 2014];
+// let profile = ['Tommy', 'male', 33, [180, 72]];
+// let newone = new Array(6);
 
-console.log(numbers);  // [ 520, 530, 1314, 2013, 2014 ]
-console.log(numbers[2]);  // 1314
+// console.log(numbers);  // [ 520, 530, 1314, 2013, 2014 ]
+// console.log(numbers[2]);  // 1314
 
-numbers[1] = 2591.8;
+// numbers[1] = 2591.8;
 
-console.log(numbers);  // [ 520, 2591.8, 1314, 2013, 2014 ]
-console.log(numbers.length);  // 5
-console.log('');
+// console.log(numbers);  // [ 520, 2591.8, 1314, 2013, 2014 ]
+// console.log(numbers.length);  // 5
+// console.log('');
 
-console.log(profile);  // [ 'Tommy', 'male', 33, [ 180, 72 ] ]
-console.log(profile[0]);  // Tommy
-console.log(profile[2]);  // 33
-console.log(profile[3][0]);  // 180
-console.log(profile[3][1]);  // 72
+// console.log(profile);  // [ 'Tommy', 'male', 33, [ 180, 72 ] ]
+// console.log(profile[0]);  // Tommy
+// console.log(profile[2]);  // 33
+// console.log(profile[3][0]);  // 180
+// console.log(profile[3][1]);  // 72
 
-profile[3][1] = 70;
+// profile[3][1] = 70;
 
-console.log(profile);  // [ 'Tommy', 'male', 33, [ 180, 70 ] ]
-console.log(profile.length);  // 4
-console.log(profile[3].length);  // 2
+// console.log(profile);  // [ 'Tommy', 'male', 33, [ 180, 70 ] ]
+// console.log(profile.length);  // 4
+// console.log(profile[3].length);  // 2
 
-console.log(numbers[numbers.length]);  // undefined
-console.log(profile[profile.length]);  // undefined
-console.log('');
+// console.log(numbers[numbers.length]);  // undefined
+// console.log(profile[profile.length]);  // undefined
+// console.log('');
 
-console.log(newone[0]);  // undefined
-console.log(newone[newone.length]);  // undefined
+// console.log(newone[0]);  // undefined
+// console.log(newone[newone.length]);  // undefined
 
 
 /******************************************************************* */
 // 对象类型
+// let item01 = new Object();
+
+// item01.name = 'item01';
+// item01.price = 1000;
+// item01.origin = 'China';
+// item01['manufacture date'] = '2019/10/07';
+// item01['color'] = 'red';
+// item01[''] = 'secret data...';
+
+// console.log(item01);
+// console.log(item01['']);
+// console.log(item01.color);
+// console.log(item01['manufacture date']);
+// console.log(item01.price);
+
+
+// item01.price = 900;
+// item01['color'] = 'yellow';
+
+// console.log(item01);
+
+
+/******************************************************************************************* */
+// 格式化字符串
+// var users = [
+//     {name: 'jack', age: 12, gender: 'male'},
+//     {name: 'mack', age: 16, gender: 'male'},
+//     {name: 'marry', age: 16, gender: 'female'},
+//     {name: 'sean', age: 55, gender: 'male'}
+// ];
+// var nations = ['China', 'Canada', 'America', 'Japan'];
+// var days_amout = 5;
+// var flight_message = `${users[1].name} decides to flight to ${nations[0]} after ${days_amout} days.`;
+// console.log(flight_message);  
+
+// var flight_message = `${users[3].name} decides to flight to ${nations[2]} after ${days_amout} days.`;
+// console.log(flight_message);
+
+// var items = [
+//     {product_id: 15023, price: 330},
+//     {product_id: 16002, price: 500}
+// ];
+// var checkout_message = `this product consts ${items[1].price * 0.8}.`;
+// console.log(checkout_message);
+
+// var string01 = 'hello\nearth!';
+// var string02 = 'hello\nearth!';
+// var string03 = String.raw`hello\nearth!`;
+// console.log(string01);
+// console.log(string02);
+// console.log(string03);
+
+// number_digits = '1 2 3 4 5 6 7';
+// string04 = String.raw({raw: 'a b c d e f g'}, ...number_digits);
+// console.log(string04);  // a1  b2  c3  d4  e5  f6  g
+
+
+/*************************************************************************** */
+// 日期与时间格式的字符串
+// var dt_cn = new Intl.DateTimeFormat('cn');
+// var dt_en = new Intl.DateTimeFormat('en');
+// var dt_de = new Intl.DateTimeFormat('de');
+
+// origin_datetime = new Date('2019-10-07');
+// console.log(origin_datetime.toDateString());
+// console.log(origin_datetime.toLocalDateString());
+
+// console.log('');
+
+// dt01 = dt_cn.format(origin_datetime);
+// dt02 = dt_en.format(origin_datetime);
+// dt03 = dt_de.format(origin_datetime);
+// console.log(dt01);
+// console.log(dt02);
+// console.log(dt03);
+
+
+/******************************************************************** */
+// 集合(set)类型
