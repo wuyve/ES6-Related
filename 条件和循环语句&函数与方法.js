@@ -1,3 +1,4 @@
+// 条件和循环语句&函数与方法
 /******************************************************************************** */
 // 循环语句
 // for(...) { }
@@ -28,7 +29,7 @@
 //     price: '6000',
 //     os: 'windows'
 // };
-// message = '';
+// let message = '';
 
 // for(let str in product) {
 //     message += `${str} `;
@@ -102,3 +103,168 @@
 // p01 = new Plants();
 // let a_copy = [...p01.solar_system()];
 // console.log(a_copy);
+
+
+/****************************************************************************************************************************** */
+// while相关语句
+// let fruits = ['apple', 'blueberry', 'cherry', 'durian', 'Fig', 'Grape', 'Haw', 'Kiwi', 'Lichee', 'Mango', 'Nucleus', 'Orange', 'Pear', 'Raspberry', 'Strawberry', 'Tangerine', 'Watermelon'];
+// let product = {
+//     id: 5687,
+//     name: 'dell PC',
+//     color: 'black',
+//     price: '6000',
+//     os: 'windows'
+// };
+// let message = '', count = 1;
+// while (count < fruits.length + 1) {
+//     message += `(${count}) ${fruits[count - 1]}`;
+//     count++;
+// }
+// console.log(message);  // (1) apple(2) blueberry(3) cherry(4) durian(5) Fig(6) Grape(7) Haw(8) Kiwi(9) Lichee(10) Mango(11) Nucleus(12) Orange(13) Pear(14) Raspberry(15) Strawberry(16) Tangerine(17) Watermelon
+// console.log('');
+
+// message = '', count = 1;
+// do {
+//     message += `(${count}) ${fruits[count - 1]}`;
+//     count++;
+// } while (count < fruits.length + 1);
+// console.log(message);  // (1) apple(2) blueberry(3) cherry(4) durian(5) Fig(6) Grape(7) Haw(8) Kiwi(9) Lichee(10) Mango(11) Nucleus(12) Orange(13) Pear(14) Raspberry(15) Strawberry(16) Tangerine(17) Watermelon
+  
+
+/******************************************************************************************************* */
+// break 和 continue 语句
+// let weekday = ['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
+//     message = 'The working days of this week',
+//     bnum = 3 + parseInt(4 * Math.random()),
+//     cnum01 = parseInt(3 * Math.random()),
+//     cnum02 = 3 + parseInt(4 * Math.random());
+// for (let i = 0; i < weekday.length; i++) {
+//     if (i == bnum) break;
+//     message += weekday[i] + ',';
+// }
+// message = message.slice(0, -2);
+// console.log(message);  // The working days of this weekMon,Tues,We
+
+// let message01 = 'Cannot have day-off on: ';
+// for (let i = 0; i < weekday.length; i++) {
+//     if (i == cnum01 || i == cnum02) continue;
+//     message01 += weekday[i] + ',';
+// }
+// message01 = message01.slice(0, -2);
+// console.log(message01);  // Cannot have day-off on: Mon,Wed,Thur,Fri,Sa
+
+
+/******************************************************************* */
+// 匿名函数
+/**
+语法格式：
+(1): function (参数) { }
+(2): (function (参数) { }) ()
+(3): void function (参数) { }
+ */
+
+// (function () {
+//     console.log('Anonymous 01 function is executed!');  // Anonymous 01 function is executed!
+// }) ();
+// void function () {
+//     console.log('Anomynous function 02 is executed.');  // Anomynous function 02 is executed.
+// } ();
+// setTimeout(function () {
+//     console.log('Showing after 2 seconeds.');  // 2秒后执行； Showing after 2 seconeds.
+// }, 2000);
+
+// let displaying = function (num = 0) {
+//     console.log(`The test number = ${num}`);
+// };
+// displaying(15);  // The test number = 15
+// setTimeout(() => {
+//     console.log('The test number = 1800');
+// }, 3000);  // The test number = 1800
+
+
+/*********************************************************************************** */
+// 对象函数
+/**
+ 形式：
+ (1): var 变量名 = {
+     ...,
+     对象函数名: function (参数) {
+         ...;
+     },
+     ...
+ }
+ (2): 变量名 = {
+     ...,
+     对象函数名 (参数) {
+         ...;
+     },
+     ...
+ }
+ */
+
+// var r_obj = {
+//     circle_area(r) {
+//         return Math.PI * r * r;
+//     },
+//     circumference(r) {
+//         return 2 * Math.PI * r;
+//     },
+//     sphere_vollume(r) {
+//         return 4 / 3 * Math.PI * Math.pow(r, 3);
+//     },
+//     cylinder_volume(r,h) {
+//         return this.circle_area(r) * h;
+//     }
+// }
+// console.log(r_obj.circle_area(10));
+// console.log(r_obj['circle_area'](10));
+// console.log(r_obj.circumference(15));
+// console.log(r_obj['circumference'](15));
+// console.log(r_obj.sphere_vollume(20));
+// console.log(r_obj['sphere_vollume'](20));
+// console.log(r_obj.cylinder_volume(10, 20));
+// console.log(r_obj['cylinder_volume'](10, 20));
+
+
+// var cubic_obj = {
+//     length: 1,
+//     width: 1,
+//     height: 1,
+//     volume: function () {
+//         return this.length * this.width * this.height;
+//     }
+// }
+// console.log(cubic_obj.volume());  // 1
+// console.log('');
+
+// cubic_obj.length = 10;
+// cubic_obj.width = 20;
+// cubic_obj.height = 30;
+// console.log(cubic_obj.volume());  // 6000
+
+
+/******************************************************************************************** */
+// 箭头函数
+
+
+/***************************************************************************** */
+// 块范围的函数
+
+
+/***************************************************************************** */
+// 参数列
+
+
+/***************************************************************************** */
+// 参数的默认数据
+
+
+/***************************************************************************** */
+// 参数的一般配对
+
+
+/***************************************************************************** */
+// 参数的扩展配对
+
+
+/***************************************************************************** */
