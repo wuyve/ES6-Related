@@ -245,26 +245,164 @@
 
 /******************************************************************************************** */
 // 箭头函数
+// function sphere01 (r) {
+//     values = {};
+//     values.volume = 4 / 3 * Math.PI * Math.pow(r, 3);
+//     values.surface_area = 4 * Math.PI * r * r;
+//     return values;
+// }
+// let sphere02 = (r) => {return {volume: 4 / 3 * Math.PI * Math.pow(r, 3), surface_area: 4 * Math.PI * r * r}};
+// console.log(sphere02(10));
+
+// let sphere03 = r => {return {volume: 4 / 3 *  Math.PI * Math.pow(r, 3), surface_area: 4 * Math.PI * r * r}};
+// console.log(sphere03(10));
+
+// let sphere04 = r => ({volume: 4 / 3 * Math.PI * Math.pow(r, 30), surface_area: 4 * Math.PI * r * r});
+// console.log(sphere04(10));
+
+// let sphere_volume = r => {return 4 / 3 * Math.PI * Math.pow(r, 3)};
+// console.log(sphere_volume(10));
+
+// let sphere_surface_area = r => 4 * Math.PI * r * r;
+// console.log(sphere_surface_area(10));
+
+// setInterval(() => console.log(new Date().getSeconds()), 3000);
+
 
 
 /***************************************************************************** */
 // 块范围的函数
+// function cylinder(r, h) {
+//     function circle (r) {
+//         var values = {};
+//         values.area = Math.PI * r * r;
+//         values.circumference = 2 * Math.PI * r;
+//         return values;
+//     }
+//     var values = {}
+//     values.circle = circle(r);
+//     values.volume = values.circle.area * h;
+//     values.surface_area = 2 * values.circle.area + values.circle.circumference * h;
+//     return values;
+// }
+// let result = cylinder(12, 50);
+// console.log(result.circle);  // { area: 452.3893421169302, circumference: 75.39822368615503 }
+// console.log(result.volume);  // 22619.46710584651
+// console.log(result.surface_area);  // 4674.689868541612
+
 
 
 /***************************************************************************** */
 // 参数列
+// function profile(a01 = 'none', a02 = 'none', a03 = 'none', ...others) {
+//     console.log(arguments);
+//     /**
+//      *  [Arguments] {
+//         '0': 'name',
+//         '1': 'gender',
+//         '2': 'age',
+//         '3': 'position',
+//         '4': 'department' }
+//      */
+//     console.log(arguments.length);  // 5
+//     console.log('');
+
+//     console.log(arguments[0], arguments[1], arguments[2]);  // name gender age
+//     console.log(a01, a02, a03);  // name gender age
+//     console.log('');
+
+//     console.log(others);  // [ 'position', 'department' ]
+//     console.log(arguments[3], arguments[4]);  // position department
+//     console.log(others[0], others[1]);  // position department
+// }
+// profile('name', 'gender', 'age', 'position', 'department');
+// console.log('');
+
+// profile();
+
+// console.log('\n\n');
+// let arg_list = ['model', 'name', 'color', 'weight', 'price'];
+// profile(...arg_list);
+
 
 
 /***************************************************************************** */
 // 参数的默认数据
+// function income(identity = 'company', currency = 'USD', days = 10, daily_income = 5000) {
+//     let result = 0;
+//     let monthly_income = days * daily_income;
+//     monthly_income = Intl.NumberFormat().format(monthly_income);
+//     result = `The ${identity}'s mothly income = ${monthly_income} ${currency}`;
+//     console.log(result);
+// }
+// income();  // The company's mothly income = 50,000 USD
+// income('Jasper');  // The Jasper's mothly income = 50,000 USD
+// income('Paula', 'GBP');  // The Paula's mothly income = 50,000 GBP
+// income('Eric', 'GBP', 31);  // The Eric's mothly income = 155,000 GBP
+// income(undefined, 'RMB', undefined, 1000);  // The company's mothly income = 10,000 RMB
+
 
 
 /***************************************************************************** */
 // 参数的一般配对
+// var item01 = {name: 'friut_set', price: 250};
+// function display01(item) {
+//     with (item)
+//         message = `${name}'s price is ${price} dollars now.`;
+//     return message;
+// }
+// function display02 ({name, price}) {
+//     message = `${name}'s price is ${price} dollars now.`;
+//     return message;
+// }
+// function display03 ({name: n, price: p}) {
+//     message = `${n}'s price is ${p} dollars now.`;
+//     return message;
+// }
+// console.log(display01(item01));  // friut_set's price is 250 dollars now.
+// console.log(display02(item01));  // friut_set's price is 250 dollars now.
+// console.log(display03(item01));  // friut_set's price is 250 dollars now.
+
+// var item02 = ['bread_set', 120];
+// function display04 ([name, price]) {
+//     message = `${name}'s price is ${price} dollars now.`;
+//     return message;
+// }
+// console.log(display04(item02));  // bread_set's price is 120 dollars now.
+
 
 
 /***************************************************************************** */
 // 参数的扩展配对
+// function user_cart (id, name, ...items) {
+//     let title = `User ${name} whose id is ${id}`;
+//     console.log(title);  // User USA-TX-21532 whose id is Alex
+//     console.log(items);
+//     /**
+//      *[ [ 'Red apple', 3 ],
+//         [ 'Durian', 5 ],
+//         [ 'Grapefruit', 13 ],
+//         [ 'Watermelon', 21 ] ]
+//      */
+//     console.log('');
+//     for (let i = 0; i < items.length; i++) {
+//         let item_message = `item ${i}: Product = ${items[i][0]}, Amount = ${items[i][1]}`;
+//         console.log(item_message);
+//         /**
+//         item 0: Product = Red apple, Amount = 3
+//         item 1: Product = Durian, Amount = 5
+//         item 2: Product = Grapefruit, Amount = 13
+//         item 3: Product = Watermelon, Amount = 21
+//          */
+//     }
+// }
+// user_cart('Alex', 'USA-TX-21532', ['Red apple', 3], ['Durian', 5], ['Grapefruit', 13], ['Watermelon', 21]);
+
 
 
 /***************************************************************************** */
+// 返回数据与void关键字
+
+
+
+/*********************************************************************** */
