@@ -1,15 +1,15 @@
-let options = {
-    maximumAge: 0,
-    timeout: 7000,
-    enableHighAccuracy: true
-}
-function succeed(position) {
-    with(position.coords) {
-        let message = `current location:\n\tLatitude = ${latitude}\n\tLongitude = ${longitude}\n\tdistance accuracy = ${accuracy}meters.`;
-        console.log(message);
+let profile = {
+    firstname: 'Jason',
+    lastname: 'Alex',
+    gender: 'male',
+    age: 28,
+    position: 'Product Manager',
+    fullname01() {
+        return this.firstname + ' ' + this.lastname;
+    },
+    get fullname02() {
+        return this.firstname + ' ' + this.lastname;
     }
-}
-function fail(error) {
-    console.log(`S{error.code}: ${error.message}`);
-}
-navigator.geolocation.getCurrentPosition(succeed, fail, options);
+};
+let result = Reflect.ownKeys(profile);
+console.log(result);
