@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>滚动事件</title>
-    <style>
-        body{
-            width: 1500px;
-            height: 1500px;
-            background-image: url(img/hansir01.jpg);
-        }
-    </style>
+    <title>document embeds</title>
 </head>
 <body>
     <script>
-        function action01() {
-            console.log('This page is scrolling');
-        }
-        window.onscroll = action01;
+        let root = document.documentElement;
+        let children = root.children;
+        console.log(children);
+        children[1].style.backgroundColor = 'greenyellow';
+        console.log(children[1]);
     </script>
 </body>
 </html>
