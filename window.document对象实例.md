@@ -17,6 +17,21 @@
     - [访问当前网址的域名](#访问当前网址的域名)
     - [返回所有embed元素构成的集合](#返回所有embed元素构成的集合)
     - [返回所有form元素实例构成的集合](#返回所有form元素实例构成的集合)
+    - [返回特定身份识别码的元素实例](#返回特定身份识别码的元素实例)
+    - [返回被设置带有特定CSS类名的所有元素实例的集合](#返回被设置带有特定css类名的所有元素实例的集合)
+    - [返回特定标签名称的所有元素实例的集合](#返回特定标签名称的所有元素实例的集合)
+    - [判断当前网页是否存在焦点](#判断当前网页是否存在焦点)
+    - [返回当前网页的Head元素实例](#返回当前网页的head元素实例)
+    - [返回当前网页所有image元素实例的集合](#返回当前网页所有image元素实例的集合)
+    - [创建当前网页或者子网页里的特定节点实例的副本](#创建当前网页或者子网页里的特定节点实例的副本)
+    - [获取当前网页的最近被修改的日期和时间](#获取当前网页的最近被修改的日期和时间)
+    - [返回当前网页中的所有超链接元素实例的集合](#返回当前网页中的所有超链接元素实例的集合)
+    - [返回特定CSS选择器名称对应的元素实例或集合](#返回特定css选择器名称对应的元素实例或集合)
+    - [返回和处置当前网页的加载状态](#返回和处置当前网页的加载状态)
+    - [返回跳转前的网页](#返回跳转前的网页)
+    - [解除已被附加的事件处理器](#解除已被附加的事件处理器)
+    - [返回当前网页中的所有script元素实例构成的集合](#返回当前网页中的所有script元素实例构成的集合)
+    - [访问当前网页的标题文本](#访问当前网页的标题文本)
 
 <!-- /TOC -->
 
@@ -290,3 +305,103 @@ console.log(embeds[1].src);
 
 ## 返回所有form元素实例构成的集合
 
+通过属性`document.forms`，可返回当前网页中的所有form元素实例构成的集合。
+
+## 返回特定身份识别码的元素实例
+
+通过函数`document.getElementById()`，可返回属性id的数据未特定名称的元素实例。
+
+## 返回被设置带有特定CSS类名的所有元素实例的集合
+
+通过函数`document.getElementByClassName()`，可返回被设置带有特定CSS类名的所有元素实例的集合。
+
+## 返回特定标签名称的所有元素实例的集合
+
+通过函数`document.getElementByTagName()`，可返回具有特定标签的名称的所有元素实例的集合。
+
+## 判断当前网页是否存在焦点
+
+通过函数`document.hasFocus()`，可判断焦点是否已进入当前网页中。
+
+```javascript
+function check_focus() {
+    let focused = document.hasFocus();
+    if(focused){
+        document.body.style.backgroundColor = 'greenyellow';
+    } else {
+        document.body.style.backgroundColor = 'pink';
+    }
+}
+```
+
+## 返回当前网页的Head元素实例
+
+通过属性`document.head`，可返回当前网页的head元素实例。
+
+## 返回当前网页所有image元素实例的集合
+
+通过属性`document.images`，可返回当前网页的所有image元素实例的集合。
+
+## 创建当前网页或者子网页里的特定节点实例的副本
+
+通过函数`document.importNode()`或【特定元素实例的id】衔接函数【.cloneNode()】的调用，可在当前网页或者iframe元素实例中的子网页里，创建特定节点实例的副本。
+
+## 获取当前网页的最近被修改的日期和时间
+
+通过属性`document.lastModified`，可返回当前网页的最近被修改的日期和时间。
+
+## 返回当前网页中的所有超链接元素实例的集合
+
+通过属性`document.links`，可返回当前网页中的所有超链接元素实例构成的集合。其中，带有属性href及其数据的a元素实例与area元素实例，均被视为超链接元素实例。
+
+## 返回特定CSS选择器名称对应的元素实例或集合
+
+通过函数`document.querySelector()`，可返回特定CSS选择器名称对应的第一个元素实例；通过`document,querySelectorAll()`，可返回特定CSS选择器名称对应的所有元素实例构成的集合。
+
+## 返回和处置当前网页的加载状态
+
+通过属性`document.readyState`，可返回当前网页的加载/就绪状态；通过属性`document.onreadystatechange`，可设置一旦当前网页的就绪状态发生任何改变时，就调用【作为事件处理器】的函数。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document readyState and onreadystateChange</title>
+</head>
+<body>
+    <script>
+        console.log(document.readyState);
+        document.onreadystatechange = event => {
+            switch(document.readyState) {
+                case 'loading':
+                    console.log('The document is being loaded.\n\n');
+                    break;
+                case 'interactive':
+                    console.log('The DOM is ready to be accessed.\n\n');
+                    break;
+                case 'complete':
+                    console.log('The document has been completely loaded.\n\n');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+## 返回跳转前的网页
+
+通过属性`document.referrer`，可返回【跳转至当前网页的前一网页】的网址。
+
+## 解除已被附加的事件处理器
+
+通过函数`document.removeEventListener()`，可解除已被附加至特定元素实例的事件处理器。
+
+## 返回当前网页中的所有script元素实例构成的集合
+
+通过属性`document.scripts`，可返回当前网页中的所有script元素实例构成的集合。
+
+## 访问当前网页的标题文本
+
+通过属性`document.title`，可设置或者获取当前网页的标题文本。

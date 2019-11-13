@@ -2,15 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>document embeds</title>
+    <title>document readyState and onreadystateChange</title>
 </head>
 <body>
     <script>
-        let root = document.documentElement;
-        let children = root.children;
-        console.log(children);
-        children[1].style.backgroundColor = 'greenyellow';
-        console.log(children[1]);
+        console.log(document.readyState);
+        document.onreadystatechange = event => {
+            switch(document.readyState) {
+                case 'loading':
+                    console.log('The document is being loaded.\n\n');
+                    break;
+                case 'interactive':
+                    console.log('The DOM is ready to be accessed.\n\n');
+                    break;
+                case 'complete':
+                    console.log('The document has been completely loaded.\n\n');
+                    break;
+            }
+        }
     </script>
 </body>
 </html>
