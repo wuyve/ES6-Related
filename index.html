@@ -2,24 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>document readyState and onreadystateChange</title>
+    <title>DOM accessKey</title>
+    <style>
+        a {
+            display: inline-block;
+            margin: 5px;
+        }
+        [id^=div] {
+            display: block;
+            padding: 10px;
+            height: 500px;
+        }
+        #div01 {
+            background-color: gold;
+        }
+        #div02 {
+            background-color: greenyellow;
+        }
+        #div03 {
+            background-color: yellowgreen;
+        }
+        #div04 {
+            background-color: royalblue;
+        }
+        #div05 {
+            background-color: chocolate;
+        }
+    </style>
 </head>
 <body>
+    <a href="#a01" accesskey="1">to a01</a>
+    <a href="#a02" accesskey="2">to a02</a>
+    <a href="#a03">to a03/a>
+    <a href="#a04">to a04</a>
+    <a href="#a05">to a05</a>
+    <br>
+    <a href="http://www.hdu.edu.cn" target="new" accesskey="6">to EDU</a>
+    <p></p>
+
+    <a name="a01">a01</a>
+    <div id="div01">
+        <input type="text" id="username" size="8" placeholder="username...">
+        <input type="password" id="password" size="8" placeholder="password...">
+        <br>
+    </div>
+    <a name="a02">a02</a>
+    <div id="div02">
+        ...
+    </div>
+    <a name="a03">a03</a>
+    <div id="div03">
+        ...
+    </div>
+    <a name="a04">a04</a>
+    <div id="div04">
+        ...
+    </div>
+    <a name="a05">a05</a>
+    <div id="div05">
+        ...
+    </div>
     <script>
-        console.log(document.readyState);
-        document.onreadystatechange = event => {
-            switch(document.readyState) {
-                case 'loading':
-                    console.log('The document is being loaded.\n\n');
-                    break;
-                case 'interactive':
-                    console.log('The DOM is ready to be accessed.\n\n');
-                    break;
-                case 'complete':
-                    console.log('The document has been completely loaded.\n\n');
-                    break;
-            }
-        }
+        let links = document.links;
+        console.log(links.length);
+        links[2].accessKey = '3';
+        links[3].accessKey = '4';
+        links[4].accessKey = '5';
+        username.accessKey = 'u';
+        password.accessKey = 'p'
     </script>
 </body>
 </html>
