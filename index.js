@@ -1,31 +1,21 @@
-class RadiusClass {
-    constructor(r) {
-        this.r = r;
+class Person {
+    constructor(name = '?', age = '?', gender = '?', department = '?') {
+        this._name = name;
+        this._age = age;
+        this._gender = gender;
+        this._department = department;
     }
-    circumference(r = this.r) {
-        return 2 * Math.PI * r;
+    set name(name) {
+        this._name = name;
+        console.log('Name is edited!');
     }
-    circle_area(r = this.r) {
-        return Math.PI * r * r;
-    }
-}
-class Cylider extends RadiusClass {
-    constructor(r, h) {
-        super(r);
-        this.r = r;
-        this.h = h;
-    }
-    volume(r = this.r, h = this.h) {
-        return super.circle_area(r) * h;
-    }
-    suface_area(r = this.r, h = this.h) {
-        return 2 * super.circle_area(r) + super.circumference(r) * h;
+    get name() {
+        console.log('Name is got!');
+        return this._name;
     }
 }
-let rc01 = new RadiusClass(10);
-console.log(rc01.circumference());  // 62.83185307179586
-console.log(rc01.circumference(15));  // 94.24777960769379
-
-let c01 = new Cylider(20, 30);
-console.log(c01.volume());  // 37699.11184307752
-console.log(c01.suface_area());  //6283.185307179587
+let p01 = new Person();
+console.log(p01.name);
+p01.name = 'Japer';
+console.log(p01.name);
+console.log(p01._name);
